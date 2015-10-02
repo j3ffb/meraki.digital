@@ -19,6 +19,9 @@
     <section>
         <div id="group-1"class="first-div section-odd-first-div"><!-- / -->
         </div>
+        <div class="chevron"> 
+          <a class="scroll" href="#meraki"><img src="images/chevron.png"></a>
+        </div>
         <div class="second-div">
           <div id="bubbles">
             <div class="bubble x1"></div>
@@ -31,6 +34,7 @@
           </div>           
         </div>
     </section>
+    <div id="meraki"></div>
     <section id="group-2">
         <div class="second-div">
           <div class="container">
@@ -43,10 +47,14 @@
               <div class="col-xs-12">
                   <p> The soul, creativity, or love put into something; the essence of yourself that is put into your work. </p>
               </div>
+              <div class="chevron"> 
+                <a class="scroll" href="#design"><img src="images/chevron.png"></a>
+              </div>
             </div>
           </div>
         </div>
     </section>
+    <div id="design"></div>
     <section id="group-3"class="section-even">
       <div class="second-div">
         <div class="container">
@@ -71,12 +79,16 @@
                    <p> Meraki are Jeff Bullock and Peter Nunn. They have been working together at the LIVE Center at the Royal Veterinary College for the past 9 years. Each brings complementary skills to the Meraki team.  Peter has over 15 years experience designing digital media solutions in both commercial and educational sectors. Jeff has 11 years experience developing bespoke software for both backend servers and frontend websites. </p> 
                    <p> Meraki is our portfolio site of the solutions that we carefully crafted with soul, creativity, and love. </p>
             </div>
+            <div class="chevron"> 
+              <a class="scroll" href="#digital"><img src="images/chevron.png"></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <div id="digital"></div>
     <section class="auto-height">
-      <div id="group-4"class="first-div section-odd-first-div"><!-- / -->
+      <div id="group-4" class="first-div section-odd-first-div"><!-- / -->
       </div>
       <div class="second-div">
         <div class="container">
@@ -93,12 +105,16 @@
                 <img src="images/computer-tab-phone.png"></p>
                 <p> We don’t believe in re-inventing the wheel. We use tried and tested tools to create responsive digital solutions. We build on top of some of the best technologies out there today including OrchardCMS, Bootstrap, Adobe suite, HTML5, CSS3, .NET.</p>
             </div>
+            <div class="chevron"> 
+              <a class="scroll" href="#portfolio"><img src="images/chevron.png"></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <div id="portfolio"></div>
     <section id="group-6"class="section-even design-develop-large">
-      <div class="first-div"><!-- / -->
+      <div class="first-div">
       </div>
       <div class="second-div">
         <div class="container ">
@@ -157,10 +173,14 @@
               <p></p>
               </div>
             </div>
+            <div class="chevron"> 
+              <a class="scroll" href="#contact"><img src="images/chevron.png"></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <div id="contact"></div>
     <section>  
       <div id="group-5" class="first-div section-odd-first-div" >
         <div class="pic-wrapper">
@@ -185,6 +205,19 @@
     </section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/affix.js"></script>
+    <script> 
+     $(".scroll").click(function(event){
+           event.preventDefault();
+           //calculate destination place
+           var dest=0;
+           if($(this.hash).offset().top > $('#content')[0].scrollHeight-$(window).height()){
+                dest=$('#content')[0].scrollHeight-$(window).height();
+           }else{
+                dest=$(this.hash).offset().top + $('#content').scrollTop();
+           }
+           //go to destination
+           $('#content').animate({scrollTop:dest}, 1000,'swing');
+       });
+      </script>
   </body>
 </html>
