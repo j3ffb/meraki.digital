@@ -1,0 +1,459 @@
+@import "bootstrap/bootstrap.less";
+@import "weather.css";
+*,
+*::before,
+*::after
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html,
+body,
+body > section
+{
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+ }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body > section{
+    color: rgb(255,255,255);
+}
+a {
+  color:rgb(0,0,0);
+  text-decoration: underline;
+}
+a:hover {
+  color:255,0,0;
+}
+html {
+    overflow: hidden;
+}
+body { 
+    overflow: hidden;
+    overflow-y: auto;
+    font: 140% / 1 roboto;
+    font-weight: 100;
+    line-height: 1.5;
+    background: #2e3436;
+    cursor: default;
+    -webkit-perspective: 1px;
+    -moz-perspective: 1px;
+    perspective: 1px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.auto-height {
+  height:auto;
+}
+.design-develop-large {
+
+  background-image: url(../images/design-develop-large.png);
+  background-size: 300%;
+  background-repeat: no-repeat;
+
+}
+img {
+  max-width: 100%;
+}
+.logo {
+	height:200px;
+	border-bottom: solid 2px rgb(204, 204, 204);
+	position: relative;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  img {
+		position: absolute;
+		bottom: 0;
+		margin:auto;
+    padding-bottom: 20px;
+	}
+}
+p {
+  line-height: 1.7;
+}
+section {
+  position: relative;
+  display: block;
+  background-position: 50% 50%; 
+  background-size: cover;  
+  -webkit-transform-style: inherit;
+  -moz-transform-style: inherit;
+  transform-style: inherit;
+}
+
+.first-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+    background-size: cover;  
+}
+.section-odd-first-div {
+    z-index: -1;
+    -webkit-transform: translateZ(-1px) scale(2);
+    -moz-transform: translateZ(-1px) scale(2);
+    transform: translateZ(-1px) scale(2);
+}
+
+.section-even {
+    background-attachment: fixed;
+}
+
+.second-div {
+    display: table-cell;
+    height: 100vh;
+    width: 100vw;
+    padding: 5%;
+    text-align: center;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+#group-1 {
+    background-image: url(../images/meraki-bk-01-sm.jpg);
+}
+#group-2 {
+    min-height:auto;
+    height:100vh;
+    background-color: rgb(75,75,75);
+    .second-div {
+      height:100vh;
+    }
+    p {
+      text-align: center;
+      margin-top: 0px;
+    }
+}
+#group-3 {
+    height:100vh;
+    background-color: rgb(255,255,255);
+     color: rgb(0,0,0);
+     height:auto;
+    .second-div {
+        height:100vh;
+    }
+}
+#group-4 {
+  background-image: url(../images/meraki-bk-02-sm.jpg);
+}
+#group-5 {
+  background-image: url(../images/meraki-bk-05-sm.jpg);
+  p {
+    font-size: 120%;
+  }
+}
+#group-6 {
+  min-height:auto;
+  height:auto;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0,0,0);
+  img {
+    max-width: 80%;
+  }
+  .second-div {
+    text-align: left;
+    font-size: 120%;
+    vertical-align: top;
+  }
+}
+.round {
+  width:50%;
+  vertical-align: middle;
+  background-color:rgb(255,0,0);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height:130px;
+  width:130px;
+  color:#FFF;
+  margin-bottom:10px;
+  margin-top:40px;
+  h1 {
+    padding-top: 42px;
+  }
+  &.one {
+  margin-top: -300px;
+  margin-bottom: 100px;
+  } 
+  &.two{
+     margin-bottom:30px;
+  }
+  &.three {
+    text-align: center;
+    h1 {
+    font-size:200%;
+    }
+  }
+}
+.displayed {
+  padding-top: 100%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  padding-top: 30%;
+  &.develop {
+    background-image: url(../images/develop.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    padding-top: 30%;
+  }
+  &.design {
+    background-image: url(../images/design.png);
+  }
+}
+.auto-height {
+    height:auto;
+    display:block;
+}
+
+/**********************************
+Slideing background
+**********************************/
+
+.pic-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /*animation*/
+  
+  animation: slideShow 24s linear infinite 12s;
+  -o-animation: slideShow 24s linear infinite 12s;
+  -moz-animation: slideShow 24s linear infinite 12s;
+  -webkit-animation: slideShow 24s linear infinite 12s;
+}
+.pic-1 {
+    animation-delay: 6s;
+  -o-animation-delay: 6s;
+  -moz--animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+  background: url(../images/meraki-bk-04-sm.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-2 {
+  animation-delay: 6s;
+  -o-animation-delay: 6s;
+  -moz--animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+  background: url(../images/meraki-bk-05-sm.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-3 {
+  animation-delay: 12s;
+  -o-animation-delay: 12s;
+  -moz--animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+  background: url(../images/meraki-bk-03-sm.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-4 {
+  animation-delay: 18s;
+  -o-animation-delay: 18s;
+  -moz--animation-delay: 18s;
+  -webkit-animation-delay: 18s;
+  background: url(../images/meraki-bk-07-sm.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pic-5 {
+  animation-delay: 18s;
+  -o-animation-delay: 18s;
+  -moz--animation-delay: 18s;
+  -webkit-animation-delay: 18s;
+  background: url(../images/meraki-bk-06-sm.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* keyframes*/
+
+@keyframes 
+slideShow {  0% {
+ opacity: 0;
+
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+
+}
+ 100% {
+ opacity: 0;
+
+}
+}
+ @-o-keyframes 
+slideShow {  0% {
+ opacity: 0;
+
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+
+}
+ 100% {
+ opacity: 0;
+
+}
+}
+ @-moz-keyframes 
+slideShow {  0% {
+ opacity: 0;
+
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+
+}
+ 100% {
+ opacity: 0;
+
+}
+}
+ @-webkit-keyframes 
+slideShow {  0% {
+ opacity: 0;
+;
+}
+ 5% {
+ opacity: 1
+}
+ 25% {
+ opacity: 1;
+}
+ 30% {
+ opacity: 0;
+
+}
+ 100% {
+ opacity: 0;
+
+}
+}
+/**********************************
+Media Queries
+**********************************/
+@media (min-width: @screen-sm-min) {
+  .design-develop-large {
+  background-size: 100%;
+  }
+  #group-5 {
+  background-image: url(../images/meraki-bk-05.jpg);
+  }
+  .round {
+  	&.two {
+  	}
+    &.three{
+    }
+    &.four {
+      margin-top:-50px;
+    }
+    &.five {
+      margin-top:-100px;
+    }
+  }
+  #group-2 {
+    p {
+      margin-top: 90px;
+    }
+  }
+}
+
+@media (min-width: @screen-md-min){
+  #group-1 {
+    background-image: url(../images/meraki-bk-01.jpg);
+  }
+  #group-4 {
+  background-image: url(../images/meraki-bk-02.jpg);
+  }
+  .pic-1 {
+  background: url(../images/meraki-bk-07.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+  .pic-2 {
+  background: url(../images/meraki-bk-04.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+  .pic-3 {
+  background: url(../images/meraki-bk-03.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+  .pic-4 {
+  background: url(../images/meraki-bk-07.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+  .pic-5 {
+  background: url(../images/meraki-bk-06.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
+}

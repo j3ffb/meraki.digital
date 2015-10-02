@@ -1,0 +1,219 @@
+.weather {
+    position: relative; overflow: hidden;
+}
+/* pseudo elements: positioning and setup */
+.weather:before, .weather:after {
+    content: "";
+    position: absolute; left: -50%; top: -50%; right: -50%; bottom: -50%;
+    z-index: 1;
+    pointer-events: none;
+    
+    background: transparent repeat;
+    opacity: 0.7;
+    
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+    
+    -webkit-animation-name: weather;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: weather;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.weather:after {
+    opacity: 0.8;
+    -webkit-animation-name: weather2;
+    animation-name: weather2;
+}
+/* rain (fast, rain.png) */
+.weather.rain:before, .weather.rain:after {
+    background-image: url("../images/rain.png");
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+.weather.rain:after {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+/* animation keyframes */
+@-webkit-keyframes weather {
+    from { background-position: 0 0px; }
+    to { background-position: 0 1024px; }
+}
+@keyframes weather {
+    from { background-position: 0 0px; }
+    to { background-position: 0 1024px; }
+}
+@-webkit-keyframes weather2 {
+    from { background-position: 64px 64px; }
+    to { background-position: 64px 1088px; }
+}
+@keyframes weather2 {
+    from { background-position: 64px 64px; }
+    to { background-position: 64px 1088px; }
+}
+
+/**********************************
+Rain
+**********************************/
+.drop {
+  background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+  background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+  width:1px;
+  height:89px;
+  position: absolute;
+  bottom:200px;
+  -webkit-animation: fall .63s linear infinite;
+  -moz-animation: fall .63s linear infinite;
+  
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+  to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+  to {margin-top:900px;}
+}
+/**********************************
+Bubbles
+**********************************/
+#bubbles { padding: 100px 0 }
+.bubble {
+    width: 60px;
+    height: 60px;
+    background: rgb(233, 233, 233);
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: absolute;
+}
+
+.x1 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+    left: 200px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x3 {
+    left: 350px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x4 {
+    right: 470px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.35;
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -o-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.x5 {
+    left: 150px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+.x6 {
+    right: 150px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.5; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+.x7 {
+    right: 350px;
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    transform: scale(0.8);
+    opacity: 0.2; 
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes moveclouds { 
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+
+@-webkit-keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+}
+
+@-moz-keyframes moveclouds {     
+    0% { 
+        top: 500px;
+    }
+
+    100% { 
+        top: -500px;
+    }
+}
+
+@-moz-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+@-o-keyframes moveclouds {
+    0% { 
+        top: 500px;
+    }
+    100% { 
+        top: -500px;
+    }
+}
+
+@-o-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+
