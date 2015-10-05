@@ -12,12 +12,11 @@
   </head>
   <body>  
     <header>      
-      <div class="background"></div>
       <img src="images/logo.png">
     </header>
     <div id="content">
     <section>
-        <div id="group-1"class="first-div section-odd-first-div"><!-- / -->
+        <div id="group-1"class="first-div section-odd-first-div">
         </div>
         <div class="chevron"> 
           <a class="scroll" href="#meraki"><img src="images/chevron.png"></a>
@@ -166,14 +165,6 @@
               <div class="info"><p>Global Vet Academy is a British Council Funded partnership between the Royal Veterinary College and Madras Veterinary College, India. We were commissioned to create the corporate design for the learning platform including logo. We also designed and developed the Moodle theme that the platform is based on. A fully responsive solution to all modern devices. </p> <p><a href="http://www.globalvetacademy.com" target="_blank">View the site</a> </p>
               </div>
               </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="logo">
-
-              </div>
-              <div class="info">
-              <p></p>
-              </div>
-            </div>
             <div class="chevron"> 
               <a class="scroll" href="#contact"><img src="images/chevron.png"></a>
             </div>
@@ -209,18 +200,30 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script> 
-     $(".scroll").click(function(event){
-           event.preventDefault();
-           //calculate destination place
-           var dest=0;
-           if($(this.hash).offset().top > $('#content')[0].scrollHeight-$(window).height()){
-                dest=$('#content')[0].scrollHeight-$(window).height();
-           }else{
-                dest=$(this.hash).offset().top + $('#content').scrollTop();
-           }
-           //go to destination
-           $('#content').animate({scrollTop:dest}, 1000,'swing');
-       });
+      $(".scroll").click(function(event){
+        event.preventDefault();
+        //calculate destination place
+        var dest=0;
+        if($(this.hash).offset().top > $('#content')[0].scrollHeight-$(window).height()){
+            dest=$('#content')[0].scrollHeight-$(window).height();
+        }else{
+            dest=$(this.hash).offset().top + $('#content').scrollTop();
+        }
+        //go to destination
+        $('#content').animate({scrollTop:dest}, 1000,'swing');
+      });
+      // Showing the header after scrolling passed the middle of the 1st group.
+      var headerHeight = $('header').outerHeight();
+      $('#content').on('scroll',function(){
+        var contentScrolledBy = $('#content').scrollTop();
+        var group1MidHeight = $('#group-1').height()/2;
+        var pos = contentScrolledBy - group1MidHeight;
+        if((headerHeight + pos) >= 0){
+          $('header').css('top', pos <= 0 ? pos : 0);
+        } else{
+          $('header').css('top', -headerHeight);
+        }
+      });
       </script>
   </body>
 </html>
