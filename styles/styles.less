@@ -151,25 +151,16 @@ p {
     }
   }
   #group-4 {
-    background-image: url(../images/meraki-bk-02-sm.jpg);
-  }
-  #group-5 {
-    & > .second-div {
-      background-image: url(../images/meraki-bk-05-sm.jpg);
-      background-size: cover;
-      .container{
-        position: relative;
-        z-index:1;
-        a {
-          color:rgb(255,255,255);
-        }        
-      }
+      background-image: url(../images/meraki-bk-02-sm.jpg);
     }
-    p {
-      font-size: 120%;
+
+  #group-5 > .second-div .container p {
+    font-size: 120%;
+    a {
+    color: rgb(255,255,255);
     }
   }
-  & > #group-6 {
+ & > #group-6 {
     min-height:auto;
     height:auto;
     background-color: rgb(255, 255, 255);
@@ -244,144 +235,170 @@ p {
 /**********************************
 Slideing background
 **********************************/
-.background-cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.slideshow {
+  list-style: none;
+  z-index: 1;
+  margin-bottom: 0;
+
+}
+.slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
   background-size: cover;
-}
-.animation-delay-6 {
-  animation-delay: 6s;
-  -o-animation-delay: 6s;
-  -moz--animation-delay: 6s;
-  -webkit-animation-delay: 6s;
-  .background-cover
-}
-.animation-delay-12 {
-  animation-delay: 12s;
-  -o-animation-delay: 12s;
-  -moz--animation-delay: 12s;
-  -webkit-animation-delay: 12s;
-  .background-cover
-}
-.animation-delay-18 {
-  animation-delay: 18s;
-  -o-animation-delay: 18s;
-  -moz--animation-delay: 18s;
-  -webkit-animation-delay: 18s;
-  .background-cover
-}
-.pic-wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-figure {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: none;
   opacity: 0;
-  /*animation*/  
-  animation: slideShow 24s linear infinite 12s;
-  -o-animation: slideShow 24s linear infinite 12s;
-  -moz-animation: slideShow 24s linear infinite 12s;
-  -webkit-animation: slideShow 24s linear infinite 12s;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation: imageAnimation 24s linear infinite 0s;
+  -moz-animation: imageAnimation 24s linear infinite 0s;
+  animation: imageAnimation 24s linear infinite 0s;
 }
-.pic-1 {
-  background: url(../images/meraki-bk-04-sm.jpg) no-repeat center center;
-  .animation-delay-6
+
+.slideshow li:nth-child(1) span {
+  background-image: url(../images/meraki-bk-09.jpg);
 }
-.pic-2 {
-  background: url(../images/meraki-bk-05-sm.jpg) no-repeat center center;
-  .animation-delay-6
+
+.slideshow li:nth-child(2) span {
+  background-image: url(../images/meraki-bk-10.jpg);
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
 }
-.pic-3 {
-  background: url(../images/meraki-bk-03-sm.jpg) no-repeat center center;
-  .animation-delay-12
+
+.slideshow li:nth-child(3) span {
+  background-image: url(../images/meraki-bk-11.jpg);
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  animation-delay: 12s;
 }
-.pic-4 {
-  background: url(../images/meraki-bk-07-sm.jpg) no-repeat center center;
-  .animation-delay-18
+
+.slideshow li:nth-child(4) span {
+  background-image: url(../images/meraki-bk-12.jpg);
+  -webkit-animation-delay: 18s;
+  -moz-animation-delay: 18s;
+  animation-delay: 18s;
 }
-.pic-5 {
-  background: url(../images/meraki-bk-06-sm.jpg) no-repeat center center;
-  .animation-delay-18
-}
-/* keyframes*/
-@keyframes 
-slideShow {  
+
+@-webkit-keyframes imageAnimation {
   0% {
     opacity: 0;
+    -webkit-animation-timing-function: ease-in;
   }
-  5% {
-    opacity: 1
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
   }
   25% {
     opacity: 1;
   }
-  30% {
+  37.5% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
-@-o-keyframes 
-slideShow {  
+@-moz-keyframes imageAnimation {
   0% {
     opacity: 0;
+    -moz-animation-timing-function: ease-in;
   }
-  5% {
-    opacity: 1
+  12.5% {
+    opacity: 1;
+    -moz-animation-timing-function: ease-out;
   }
   25% {
     opacity: 1;
   }
-  30% {
+  37.5% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
-@-moz-keyframes 
-slideShow {  
+@keyframes imageAnimation {
   0% {
     opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
-  5% {
-    opacity: 1
+  12.5% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   25% {
     opacity: 1;
   }
-  30% {
+  37.5% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
-@-webkit-keyframes 
-slideShow {  
+@-webkit-keyframes titleAnimation {
   0% {
     opacity: 0;
   }
-  5% {
-    opacity: 1
+  12.5% {
+    opacity: 1;
   }
   25% {
     opacity: 1;
   }
-  30% {
+  37.5% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
+}
+@-moz-keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  12.5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  37.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.no-cssanimations .slideshow li span {
+  opacity: 1;
 }
 /**********************************
 Media Queries
@@ -399,9 +416,6 @@ Media Queries
         margin-top: 90px;
       }
     }
-    #group-5 > .second-div {
-      background-image: url(../images/meraki-bk-05.jpg);
-    }
   }
 }
 
@@ -413,20 +427,5 @@ Media Queries
     #group-4 {
     background-image: url(../images/meraki-bk-02.jpg);
     }
-  }
-  .pic-1 {
-    background: url(../images/meraki-bk-07.jpg) no-repeat center center;
-  }
-  .pic-2 {
-    background: url(../images/meraki-bk-04.jpg) no-repeat center center;
-  }
-  .pic-3 {
-    background: url(../images/meraki-bk-03.jpg) no-repeat center center;
-  }
-  .pic-4 {
-    background: url(../images/meraki-bk-07.jpg) no-repeat center center;
-  }
-  .pic-5 {
-    background: url(../images/meraki-bk-06.jpg) no-repeat center center;
   }
 }
