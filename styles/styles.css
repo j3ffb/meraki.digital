@@ -6788,8 +6788,9 @@ body {
   font-size: 1em;
 }
 .background-black {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(75, 75, 75, 0.9);
   padding: 20px;
+  margin-bottom: 200px;
 }
 .relative-position {
   position: relative;
@@ -6934,7 +6935,7 @@ p {
   height: auto;
 }
 #content .group-4 {
-  background-image: url(../images/new-meraki-bk-01.jpg);
+  background-image: url(../images/new-meraki-bk-01-sm.jpg);
   height: auto;
 }
 #content .group-4.section-odd-first-div {
@@ -7035,6 +7036,9 @@ Media Queries
   }
   #content > #group-2 .second-div {
     background-image: url(../images/new-meraki-bk-02.png);
+  }
+  #group-4 {
+    background-image: url(../images/new-meraki-bk-01.jpg);
   }
   #group-4 .second-div {
     height: 100vh;
