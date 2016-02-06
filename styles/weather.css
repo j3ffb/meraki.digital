@@ -82,15 +82,15 @@ Rain
 /**********************************
 Bubbles
 **********************************/
-#bubbles { padding: 100px 0 }
+#bubbles {}
 .bubble {
     width: 60px;
     height: 60px;
-    background: rgb(233, 233, 233);
     border-radius: 200px;
     -moz-border-radius: 200px;
     -webkit-border-radius: 200px;
     position: absolute;
+    background-image: url(../images/grass-seed.png);
 }
 
 .x1 {
@@ -105,10 +105,7 @@ Bubbles
 
 .x2 {
     left: 200px;
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    transform: scale(0.6);
-    opacity: 0.5;
+    opacity: 1;
     -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
     -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
     -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
