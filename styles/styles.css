@@ -6949,13 +6949,19 @@ p {
 }
 #content .group-5 {
   position: absolute;
-  background-image: url(../images/new-meraki-bk-05.png);
+  background-image: url(../images/new-meraki-bk-06.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
 #content .group-5 p {
   margin-top: 20px;
+}
+#content .group-5 a {
+  color: white;
+}
+#content .group-5 a:hover {
+  color: red;
 }
 #content > #group-6 {
   min-height: auto;
@@ -7024,6 +7030,9 @@ p {
   min-height: 35px;
   padding-left: 45px;
 }
+.glyphicon-envelope {
+  font-size: 1.5em;
+}
 /**********************************
 Media Queries
 **********************************/
@@ -7033,6 +7042,9 @@ Media Queries
   }
   #content .portfolio {
     background-size: 100%;
+  }
+  #content .portfolioimg {
+    margin-bottom: 30px;
   }
   #content > #group-2 .second-div {
     background-image: url(../images/new-meraki-bk-02.png);
